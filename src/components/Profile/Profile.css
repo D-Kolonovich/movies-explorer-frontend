@@ -1,0 +1,121 @@
+.profile {
+    background-color: #202020;
+}
+
+.profile__wrapper {
+    box-sizing: border-box;
+    max-width: 410px;
+    min-height: 626px;
+    margin: auto;
+    padding: 74px 0 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile__header {
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.profile__info {
+    width: 100%;
+}
+
+.profile__info-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile__input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    min-width: 310px;
+    background-color: #202020;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: right;
+    color: #FFFFFF;
+}
+
+.profile__input-label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    color: #FFFFFF;
+}
+
+.profile__info-wrapper:nth-of-type(1) {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #424242;
+    margin-bottom: 17px;
+}
+
+.profile__buttons-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile__button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.profile__button:hover {
+    opacity: 0.7;
+}
+
+.profile__button_type_exit {
+    font-weight: 500;
+    color: #EE3465;
+    margin-top: 16px;
+}
+
+@media screen and (max-width: 1279px) {
+    .profile__wrapper {
+        min-height: 950px;
+        padding: 236px 0 269px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .profile__wrapper {
+        min-height: 706px;
+        max-width: 260px;
+        padding: 70px 0 40px;
+    }
+
+    .profile__button {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .profile__input {
+        min-width: 200px;
+    }
+
+}
