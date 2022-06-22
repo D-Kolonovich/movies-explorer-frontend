@@ -12,8 +12,6 @@
     text-decoration: underline;
 }
 
-
-
 .mobilieNavigation__popup {
     position: absolute;
     top: 0;
@@ -39,10 +37,6 @@
     display: flex;
     margin-bottom: 90px;
 }
-
-/* .mobile-navigation_visible {
-    visibility: visible;
-} */
 
 @media screen and (max-width: 767px) {
     .mobilieNavigation {

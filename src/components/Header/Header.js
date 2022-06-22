@@ -24,31 +24,42 @@ function Header() {
         <Link to="/">
           <img className="logo" src={logo} alt="логотип"></img>
         </Link>
-        {location.pathname !== "/" ? (
-          <Navigation />
-        ) : (
+        {location.pathname === "/" ? (
           <div className="header__auth">
-            <a className="header__register header__button" href="#">
+            <Link className="header__register header__button" to="/signup">
               Регистрация
-            </a>
-            <button className="header__login-btn header__button">Войти</button>
+            </Link>
+            <Link to="/signin">
+              <button className="header__login-btn header__button">
+                Войти
+              </button>
+            </Link>
           </div>
-        )}
-        {isMobileMemuOpen ? (
-          <button
-            className="header__burgerMenu header__burgerMenu_type_off"
-            onClick={handleCloseClick}
-          ></button>
         ) : (
-          <button
-            className="header__burgerMenu header__burgerMenu_type_on"
-            onClick={handleClick}
-          ></button>
+          <Navigation />
+        )}
+        {location.pathname !== "/" && (
+          <>
+            {isMobileMemuOpen ? (
+              <button
+                className="header__burgerMenu header__burgerMenu_type_off"
+                onClick={handleCloseClick}
+              ></button>
+            ) : (
+              <button
+                className="header__burgerMenu header__burgerMenu_type_on"
+                onClick={handleClick}
+              ></button>
+            )}
+          </>
         )}
       </div>
 
       {isMobileMemuOpen && (
-        <MobilieNavigation isMobileMemuOpen={isMobileMemuOpen} />
+        <MobilieNavigation
+          isMobileMemuOpen={isMobileMemuOpen}
+          onLinkClick={handleCloseClick}
+        />
       )}
     </header>
   );

@@ -15,7 +15,10 @@ function App() {
   const location = useLocation();
   return (
     <div className="App">
-    {(location.pathname === '/' || location.pathname === '/movies' || location.pathname === '/saved-movies' || location.pathname === '/profile') && <Header />}
+      {(location.pathname === "/" ||
+        location.pathname === "/movies" ||
+        location.pathname === "/saved-movies" ||
+        location.pathname === "/profile") && <Header />}
       <Routes>
         <Route path="/" element={<Main />}></Route>
         <Route path="/movies" element={<Movies />}></Route>
@@ -23,9 +26,11 @@ function App() {
         <Route path="/profile" element={<Profile />}></Route>
         <Route path="/signup" element={<Register />}></Route>
         <Route path="/signin" element={<Login />}></Route>
-        <Route path='*' element={<PageNotFound />}></Route>
+        <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
-      {(location.pathname === '/' || location.pathname === '/movies' || location.pathname === '/saved-movies') && <Footer />}
+      {(location.pathname === "/" ||
+        location.pathname === "/movies" ||
+        location.pathname === "/saved-movies") && <Footer />}
     </div>
   );
 }

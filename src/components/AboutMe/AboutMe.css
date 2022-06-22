@@ -9,7 +9,6 @@
 }
 
 .about-me__info {
-    /* width: calc(100% - 2 * 70px); */
     min-height: 327px;
     margin: 66px auto 0;
     display: grid;

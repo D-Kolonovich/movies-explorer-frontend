@@ -26,9 +26,6 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .header__button {
-        display: none;
-    }
     .header__burgerMenu_type_off {
         z-index: 6;
         background: url(../../images/burgerClose.svg) no-repeat;

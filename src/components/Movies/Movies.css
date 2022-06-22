@@ -1,6 +1,5 @@
 .movies {
     background-color: #202020;
-    /* padding: 0 70px; */
 }
 
 .movies__wrapper {
@@ -40,10 +39,6 @@
         max-width: 768px;
         padding: 0 30px;
     }
-
-    /* .movies__button-wrapper {
-        width: calc(100% - 2 * 30px);
-    } */
 }
 
 @media screen and (max-width: 767px) {
@@ -51,10 +46,6 @@
         max-width: 320px;
         padding: 0 10px;
     }
-
-    /* .movies__button-wrapper {
-        width: calc(100% - 2 * 10px);
-    } */
 
     .movies__button {
         width: 240px;
