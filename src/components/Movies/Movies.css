@@ -1,0 +1,52 @@
+.movies {
+    background-color: #202020;
+}
+
+.movies__wrapper {
+    max-width: 1280px;
+    margin: auto;
+    padding: 0 70px;
+}
+
+.movies__button-wrapper {
+    width: 100%;
+    min-height: 166px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movies__button {
+    width: 320px;
+    height: 36px;
+    border: 1px solid #2F2F2F;
+    color: #fff;
+    background-color: #2F2F2F;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1279px) {
+    .movies__wrapper {
+        max-width: 768px;
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .movies__wrapper {
+        max-width: 320px;
+        padding: 0 10px;
+    }
+
+    .movies__button {
+        width: 240px;
+    }
+}
