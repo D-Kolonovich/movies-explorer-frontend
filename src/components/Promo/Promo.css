@@ -20,8 +20,6 @@
     margin: 75px 0 0;
     text-align: left;
     letter-spacing: -0.04em;
-
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 50px;
@@ -35,14 +33,11 @@
     margin: 36px 0 0;
     text-align: left;
     letter-spacing: -0.04em;
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 16px;
-
     color: #FFFFFF;
-
     mix-blend-mode: normal;
     opacity: 0.5;
 }
@@ -59,8 +54,6 @@
 
     border: 1px solid #FFFFFF;
     border-radius: 3px;
-    font-family: 'Inter';
-    
     color: #FFFFFF;
     padding: 0;
 

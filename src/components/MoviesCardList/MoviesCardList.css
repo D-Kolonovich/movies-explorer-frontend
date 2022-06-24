@@ -11,7 +11,7 @@
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(4, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(230px, 1fr));
     grid-column-gap: 20px;
     grid-row-gap: 38px;
@@ -21,7 +21,8 @@
     .moviesCardList__list {
         width: 100%;
         gap: 30px;
-        grid-template-columns: repeat(2, minmax(302px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(302px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(269px, 1fr));
         padding-bottom: 30px;
     }
 }
@@ -29,8 +30,9 @@
 @media screen and (max-width: 767px) {
     .moviesCardList__list {
         width: 100%;
-        gap: 14px;
-        grid-template-columns: repeat(1, minmax(300px, 1fr));
+        gap: 34px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(231px, 1fr));
         padding: 0 0 26px 0;
     }
 
