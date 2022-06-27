@@ -8,6 +8,7 @@ function AuthForm({
   linkText,
   linkLead,
   linkTo,
+  handleSubmit,
   children,
 }) {
   const location = useLocation();
@@ -17,7 +18,7 @@ function AuthForm({
       <Link to="/">
         <img className="logo logo_type_auth" src={logo} alt="логотип"></img>
       </Link>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <h2 className="form__header">{header}</h2>
         <div className="form__input-wrapper">{children}</div>
         <button
