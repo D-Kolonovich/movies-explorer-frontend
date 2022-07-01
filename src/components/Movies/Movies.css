@@ -8,6 +8,18 @@
     padding: 0 70px;
 }
 
+.movies__nothing-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 496px);
+    color: #fff;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+}
+
 .movies__button-wrapper {
     width: 100%;
     min-height: 166px;

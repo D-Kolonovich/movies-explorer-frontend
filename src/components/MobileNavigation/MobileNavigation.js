@@ -35,11 +35,11 @@ function MobilieNavigation(props) {
         <Link
           className="navigation__profile mobilieNavigation__profile"
           to="/profile"
+          onClick={props.onLinkClick}
         >
           Аккаунт
           <div
             className="navigation__icon-user"
-            onClick={props.onLinkClick}
           ></div>
         </Link>
       </div>
