@@ -158,7 +158,6 @@ function App() {
 
   function handleInfoTooltipOpen() {
     setIsInfoTooltipOpen(false);
-    setIsRequestSuccessful(false);
   }
 
   useEffect(() => {
@@ -209,13 +208,13 @@ function App() {
     mainApi
       .updateProfile({ name, email })
       .then((res) => {
-        setIsRequestSuccessful(!isRequestSuccessful);
+        setIsRequestSuccessful(true);
         setIsInfoTooltipOpen(true);
         setCurrentUser(res);
       })
       .catch((err) => {
         setIsInfoTooltipOpen(true);
-        setIsInfoTooltipOpen(true);
+        setIsRequestSuccessful(false)
         console.log(err);
       });
   }

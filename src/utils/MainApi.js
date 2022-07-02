@@ -61,7 +61,7 @@ class MainApi {
                 year: card.year || 0,
                 description: card.description || "No data",
                 image: `https://api.nomoreparties.co/${card.image.url}`,
-                trailerLink: card.trailerLink,
+                trailerLink: card.trailerLink || "https://www.youtube.com",
                 nameRU: card.nameRU,
                 nameEN: card.nameEN || "No data",
                 thumbnail: `https://api.nomoreparties.co/${card.image.formats.thumbnail.url}`,
@@ -121,9 +121,9 @@ class MainApi {
 
 }
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001';
+// const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001';
 const mainApi = new MainApi({
-    url: BASE_URL,
+    url: "https://api.movies.kolonovich.nomoreparties.sbs",
 });
 
 export default mainApi;
