@@ -66,6 +66,7 @@ function Profile({
                 maxLength="30"
               ></input>
             </div>
+            <span className="profile__error">{errors.name}</span>
             <div className="profile__info-wrapper">
               <label className="profile__input-label" htmlFor="email">
                 E-mail
@@ -73,12 +74,14 @@ function Profile({
               <input
                 id="email"
                 className="profile__input profile__input_type_email"
+                type="email"
                 name="email"
                 value={values.email || ""}
                 onChange={handleChange}
                 required
               ></input>
             </div>
+            <span className="profile__error">{errors.email}</span>
           </div>
           <div className="profile__buttons-wrapper">
             {!isInfoChanged && (

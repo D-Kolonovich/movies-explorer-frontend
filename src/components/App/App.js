@@ -81,7 +81,6 @@ function App() {
         .then((data) => {
           setIsTokenChecked(true);
           setLoggedIn(true);
-          console.log(data);
         })
         .catch((err) => {
           localStorage.removeItem("jwt");

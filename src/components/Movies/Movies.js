@@ -66,7 +66,6 @@ function Movies({
         add = 3;
         break;
     }
-    console.log(currentWidth, "currentWidth", res, add);
     setСardsToRender(res);
     setCardsToAdd(add);
   }, [currentWidth, filteredMovies]);
