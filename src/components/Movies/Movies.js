@@ -26,9 +26,10 @@ function Movies({
 
   const [isSearchHandled, setIsSearchHandled] = useState(false);
 
-  function handleCheckboxChange() {
-    setIsChecked(!isChecked); // сохранить в локалстор
+  function handleCheckboxChange(value) {
+    setIsChecked(value);
     setIsSearchHandled(true);
+    localStorage.setItem("checkboxStatus", JSON.stringify(value));
   }
 
   // служебные
@@ -74,18 +75,13 @@ function Movies({
     setСardsToRender(cardsToRender + cardsToAdd);
   }
 
-  // function resetCardsToRender() {
-  //   console.log("reset card count");
-  //   //setСardsToRender();
-  // }
-
   return (
     <>
       <section className="movies">
         <div className="movies__wrapper">
           <SearchForm
             getMovies={getMovies}
-            handleCheckboxChange={handleCheckboxChange}
+            checkboxChange={handleCheckboxChange}
             isChecked={isChecked}
             setIsSearchHandled={setIsSearchHandled}
           />

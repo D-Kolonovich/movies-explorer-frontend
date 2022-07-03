@@ -4,7 +4,7 @@ import "./SearchForm.css";
 
 function SearchForm({
   getMovies,
-  handleCheckboxChange,
+  checkboxChange,
   isChecked,
   setIsSearchHandled,
 }) {
@@ -30,6 +30,11 @@ function SearchForm({
     setIsSearchHandled(true);
   }
 
+  function handleCheckboxChange(e) {
+    checkboxChange(e.target.checked);
+    getMovies(inputValue, e.target.checked);
+  }
+
   return (
     <section className="searchForm">
       <form className="searchForm__form" onSubmit={handleSearchSubmit}>
@@ -49,7 +54,7 @@ function SearchForm({
             <input
               type="checkbox"
               className="searchForm-checkbox__input"
-              value={isChecked}
+              checked={isChecked}
               onChange={handleCheckboxChange}
             ></input>
             <span className="searchForm-checkbox__slider white-circle"></span>

@@ -33,6 +33,8 @@ function App() {
     JSON.parse(localStorage.getItem("shortMovies")) || []
   );
   const [savedMovies, setSavedMovies] = useState([]);
+  const [filteredSavedMovies, setFilteredSavedMovies] = useState([]);
+
   const [savedMoviesIds, setSavedMoviesIds] = useState([]);
 
   const [isFirstQuery, setIsFirstQuery] = useState(true);
@@ -49,8 +51,6 @@ function App() {
           localStorage.setItem("jwt", data.token);
           setLoggedIn(true);
           navigate("/movies");
-          // setIsSuccess(true);
-          // setInfoTooltipMessage("Вы успешно авторизировались!");
         }
       })
       .catch((err) => {
@@ -64,8 +64,6 @@ function App() {
       .register({ name, email, password })
       .then(() => {
         onLogin({ password: password, email: email });
-        // setIsSuccess(true);
-        // setInfoTooltipMessage("Вы успешно зарегистрировались!");
       })
       .catch((err) => {
         console.log(err);
@@ -84,7 +82,6 @@ function App() {
         })
         .catch((err) => {
           localStorage.removeItem("jwt");
-
           console.log(err);
         });
     } else {
@@ -120,7 +117,17 @@ function App() {
     const result = filterMovies(movies, searchText);
     setFilteredMovies(result);
     setShortMovies(result.filter((i) => i.duration <= 40));
+    saveToLocalStorage(result, searchText, checkboxStatus);
   }
+
+  function getSavedMovies(searchText, checkboxStatus) {
+    let result = filterMovies(savedMovies, searchText);
+    if (checkboxStatus) {
+      result = (result.filter((i) => i.duration <= 40));
+    }
+    setFilteredSavedMovies(result);
+  }
+
   function saveToLocalStorage(moviesArr, searchText, checkboxStatus) {
     if (checkboxStatus) {
       localStorage.setItem(
@@ -144,12 +151,14 @@ function App() {
     });
     return filteredMovies;
   }
+
   function handleMovieLike(movieCard) {
     mainApi
       .createMovie(movieCard)
       .then((data) => {
         setSavedMovies([data, ...savedMovies]);
         setSavedMoviesIds([data.movieId, ...savedMoviesIds]);
+        setFilteredSavedMovies([data, ...filteredSavedMovies]);
       })
       .catch((err) => {
         console.log(err);
@@ -174,6 +183,7 @@ function App() {
             .map((item) => item.movieId)
         );
         setSavedMovies(movies);
+        setFilteredSavedMovies(movies);
       })
       .catch((err) => {
         console.log(err);
@@ -189,13 +199,15 @@ function App() {
     mainApi
       .removeMovie(cardId)
       .then((res) => {
-        setSavedMovies((state) => state.filter((el) => el._id !== res._id));
+        setSavedMovies((prevState) => prevState.filter((movie) => movie._id !== cardId));
+        setFilteredSavedMovies((prevState) => prevState.filter((movie) => movie._id !== cardId));
         setSavedMoviesIds((state) => state.filter((el) => el !== res.movieId));
       })
       .catch((err) => {
         console.log(err);
       });
   }
+
 
   function handleExit() {
     setLoggedIn(false);
@@ -256,7 +268,8 @@ function App() {
                 element={
                   <ProtectedRoute loggedIn={loggedIn}>
                     <SavedMovies
-                      savedMovies={savedMovies}
+                      getSavedMovies={getSavedMovies}
+                      filteredSavedMovies={filteredSavedMovies}
                       handleMovieRemove={handleMovieRemove}
                     />
                   </ProtectedRoute>

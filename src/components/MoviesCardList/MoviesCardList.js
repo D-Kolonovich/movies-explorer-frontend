@@ -53,8 +53,6 @@ function MoviesCardList({
                 handleMovieRemove={handleMovieRemove}
               />
             ))}
-
-        {/* {filteredMovies && } */}
       </ul>
     </section>
   );
