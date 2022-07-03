@@ -1,0 +1,115 @@
+.popup {
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: -400px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    transition: all 0.8s ease 0s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.popup_opened {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+}
+
+.popup__container {  
+    /* box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15); */
+    max-width: 430px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 34px 36px 37px;
+}
+
+.popup__button-close {
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-image: url(../../images/button-close.svg);
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border: none;
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.popup__close-button:hover {
+    opacity: 0.7;
+    transition: opacity 0.2s linear;
+}
+
+.popup__figure {
+    margin: 0;
+}
+
+.popup__image-tooltip {
+    display: flex;
+    width: 120px;
+    height: 120px;
+    margin: 60px auto 40px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.popup__heading {
+    max-width: 330px;
+    color: #000;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 122%;
+    text-align: center;
+    margin: 0 0 24px 0;
+}
+
+.popup__heading-tooltip {
+    max-width: 350px;
+}
+
+@media screen and (max-width: 1279px) {
+    .popup {
+        top: -80px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .popup{
+        top: -300px;
+    }
+
+    .popup__container {
+        padding: 25px 22px;
+        max-width: 282px;
+    }
+
+    .popup__button-close {
+        margin-left: 230px;
+        margin-bottom: 40px;
+        width: 26px;
+        height: 26px;
+        right: 5px;
+    }
+
+    .popup__heading {
+        margin-bottom: 75px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .popup__heading-tooltip {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 15px;
+    }
+    
+}
