@@ -38,7 +38,7 @@
     box-sizing: border-box;
 }
 
-.searchForm-checkbox__input:checked+.searchForm-checkbox__slider:before {
+.searchForm-checkbox__input:checked + .searchForm-checkbox__slider:before {
     transform: translateX(16px);
 }
 

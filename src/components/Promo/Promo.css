@@ -60,6 +60,13 @@
     background-color: rgba(28,28,28,0);
 } 
 
+.promo__button-link {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
 @media screen and (max-width: 1279px) {
     .promo__wrapper {
         max-width: 768px;

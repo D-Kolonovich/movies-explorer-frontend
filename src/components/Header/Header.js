@@ -5,7 +5,7 @@ import Navigation from "../Navigation/Navigation";
 import { useState } from "react";
 import MobilieNavigation from "../MobileNavigation/MobileNavigation";
 
-function Header() {
+function Header({loggedIn}) {
   const location = useLocation();
   const [isMobileMemuOpen, setMobileMenu] = useState(false);
 
@@ -24,7 +24,7 @@ function Header() {
         <Link to="/">
           <img className="logo" src={logo} alt="логотип"></img>
         </Link>
-        {location.pathname === "/" ? (
+        {!loggedIn ? (
           <div className="header__auth">
             <Link className="header__register header__button" to="/signup">
               Регистрация
@@ -38,7 +38,7 @@ function Header() {
         ) : (
           <Navigation />
         )}
-        {location.pathname !== "/" && (
+        {loggedIn ? (
           <>
             {isMobileMemuOpen ? (
               <button
@@ -52,7 +52,10 @@ function Header() {
               ></button>
             )}
           </>
-        )}
+        )
+        :
+        null
+        }
       </div>
 
       {isMobileMemuOpen && (
