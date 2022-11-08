@@ -1,5 +1,5 @@
 # movies-explorer-frontend
-http://kolonovich.com
+https://kolonovich.com
 
 # Getting Started with Create React App
 
